@@ -17,7 +17,7 @@ class UserRegistrationProblem:
     def check_last_name(self):
         is_true = True
         while is_true:
-            print("Your first name should Start with capital letter")
+            print("Your last name should Start with capital letter")
             print("Should contain only alphabets.")
             print("Atleast must contain 3 characters.")
             self.last_name = input("Please enter your last name: ")

@@ -26,10 +26,22 @@ class UserRegistrationProblem:
                 is_true = False
             else:
                  print("Invalid Input.")
-                 
+
+    def check_mail(self):
+        is_true = True
+        while is_true:
+            print("E.g. abc.xyz@bl.co.in ")
+            print("Email has 3 mandatory parts (abc, bl & co) and 2 optional (xyz & in) with precise @ and . positions")
+            self.email = input("Please enter your email: ")
+            if re.fullmatch(r'^[a-zA-Z0-9]+(\.[a-zA-Z0-9]+)*@[a-zA-Z0-9]+(\.[a-zA-Z]{2,}){1,2}$', self.email):
+                print("Email is accepted")
+                is_true = False
+            else:
+                 print("Invalid Input.")
 
 user_obj = UserRegistrationProblem()
 user_obj.check_first_name()
 user_obj.check_last_name()
+user_obj.check_mail()
 
 

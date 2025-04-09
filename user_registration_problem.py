@@ -77,5 +77,6 @@ user_obj.check_first_name()
 user_obj.check_last_name()
 user_obj.check_mail()
 user_obj.check_phone_number()
+user_obj.check_password()
 
 

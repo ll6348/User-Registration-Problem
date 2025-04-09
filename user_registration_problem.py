@@ -56,14 +56,12 @@ class UserRegistrationProblem:
         while is_true:
             print("As a User need to follow pre-defined Password rules.")
             print("Rule1 - minimum 8 Characters")
-            print("Rule 2 - Should have at least 1 Upper Case")
-            print("Rule3 - Should have at least 1 numeric number in the password")
             self.password = input("Please enter your password: ")
-            if re.fullmatch(r'^(?=.*[A-Z])(?=.*[0-9]).{8,}$',  self.password):
-                print("Password passed rule 1, rule 2 and rule 3.")
+            if re.fullmatch(r'^.{8,}$',  self.password):
+                print("Password passed rule 1.")
                 is_true = False
             else:
-                 print("Password didn't pass one of the rules.")
+                 print("Password didn't pass rule 1.")
 
 user_obj = UserRegistrationProblem()
 user_obj.check_first_name()

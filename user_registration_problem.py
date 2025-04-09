@@ -39,9 +39,22 @@ class UserRegistrationProblem:
             else:
                  print("Invalid Input.")
 
+    def check_phone_number(self):
+        is_true = True
+        while is_true:
+            print("E.g. 91 9919819801")
+            print("Format : Country code followed by space and 10 digit number")
+            self.phone_number = input("Please enter your phone number: ")
+            if re.fullmatch(r'^\d{2}\s\d{10}$',  self.phone_number):
+                print("Phone number is accepted")
+                is_true = False
+            else:
+                 print("Invalid Input.")
+
 user_obj = UserRegistrationProblem()
 user_obj.check_first_name()
 user_obj.check_last_name()
 user_obj.check_mail()
+user_obj.check_phone_number()
 
 

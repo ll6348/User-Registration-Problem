@@ -57,8 +57,9 @@ class UserRegistrationProblem:
             print("As a User need to follow pre-defined Password rules.")
             print("Rule1 - minimum 8 Characters")
             print("Rule 2 - Should have at least 1 Upper Case")
+            print("Rule 3 - Should have at least 1 numeric number in the password")
             self.password = input("Please enter your password: ")
-            if re.fullmatch(r'^(?=.*[A-Z]).{8,}$',  self.password):
+            if re.fullmatch(r'^(?=.*[A-Z])(?=.*[0-9]).{8,}$',  self.password):
                 print("Password passed rule 1.")
                 is_true = False
             if re.fullmatch(r'^.{1,7}$', self.password):
@@ -67,12 +68,14 @@ class UserRegistrationProblem:
             if re.fullmatch(r'^(?!.*[A-Z]).{8,}$', self.password):
                  print("Password didn't pass the rule 2.")
                  continue
+            if re.fullmatch(r'^(?!.*[0-9]).{8,}$', self.password):
+                 print("Password didn't pass the rule 3.")
+                 continue
             
 user_obj = UserRegistrationProblem()
 user_obj.check_first_name()
 user_obj.check_last_name()
 user_obj.check_mail()
 user_obj.check_phone_number()
-user_obj.check_password()
 
 

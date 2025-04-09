@@ -26,8 +26,10 @@ class UserRegistrationProblem:
                 is_true = False
             else:
                  print("Invalid Input.")
+                 
 
 user_obj = UserRegistrationProblem()
 user_obj.check_first_name()
+user_obj.check_last_name()
 
 

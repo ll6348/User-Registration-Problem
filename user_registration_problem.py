@@ -51,6 +51,19 @@ class UserRegistrationProblem:
             else:
                  print("Invalid Input.")
 
+    def check_password(self):
+        is_true = True
+        while is_true:
+            print("As a User need to follow pre-defined Password rules.")
+            print("Rule1 - minimum 8 Characters")
+            self.password = input("Please enter your password: ")
+            if re.fullmatch(r'^.{8,}$',  self.password):
+                print("Password passed rule 1.")
+                is_true = False
+            if re.fullmatch(r'^.{1,7}$', self.password):
+                 print("Password didn't pass the rule 1.")
+                 continue
+            
 user_obj = UserRegistrationProblem()
 user_obj.check_first_name()
 user_obj.check_last_name()

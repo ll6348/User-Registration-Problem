@@ -75,12 +75,24 @@ class UserRegistrationProblem:
             if not re.fullmatch(r'^[a-zA-Z0-9]*[^a-zA-Z0-9\s_][a-zA-Z0-9]*$', self.password):
                  print("Password didn't pass the rule 4.")
                  continue
-                
-user_obj = UserRegistrationProblem()
-user_obj.check_first_name()
-user_obj.check_last_name()
-user_obj.check_mail()
-user_obj.check_phone_number()
-user_obj.check_password()
 
-
+class CheckMails(UserRegistrationProblem):
+    
+    def check_mail(self, email):
+        self.email = email
+        if re.fullmatch(r'^[a-zA-Z0-9]+(\.[a-zA-Z0-9]+)*@[a-zA-Z0-9]+(\.[a-zA-Z]{2,}){1,2}$', self.email):
+            return "Email is accepted"
+        else:
+            return "Invalid Input."
+              
+# user_obj = UserRegistrationProblem()
+# user_obj.check_first_name()
+# user_obj.check_last_name()
+# user_obj.check_mail()
+# user_obj.check_phone_number()
+# user_obj.check_password()
+mails_to_check = ['abc@yahoo.com', 'abc-100@yahoo.com', 'abc.100@yahoo.com', 'abc111@abc.com','abc-100@abc.net', 'abc.100@abc.com.au', 'abc@1.com', 'abc@gmail.com.com', 'abc+100@gmail.com']
+for i in mails_to_check:
+    mail_obj = CheckMails()
+    result = mail_obj.check_mail(i)
+    print(result)

@@ -72,7 +72,7 @@ class UserRegistrationProblem:
             if re.fullmatch(r'^(?!.*[0-9]).{8,}$', self.password):
                  print("Password didn't pass the rule 3.")
                  continue
-            if not in re.fullmatch(r'^[a-zA-Z0-9]*[^a-zA-Z0-9\s_][a-zA-Z0-9]*$', self.password):
+            if not re.fullmatch(r'^[a-zA-Z0-9]*[^a-zA-Z0-9\s_][a-zA-Z0-9]*$', self.password):
                  print("Password didn't pass the rule 4.")
                  continue
                 
